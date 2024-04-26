@@ -9,10 +9,12 @@ part 'theme_state.dart';
 
 class ThemeCubit extends Cubit<ThemeState> {
   ThemeCubit()
-      : super(const ThemeState(
-          currentTheme: MainTheme(),
-          themeMode: ThemeMode.system,
-        ));
+      : super(
+          const ThemeState(
+            currentTheme: MainTheme(),
+            themeMode: ThemeMode.system,
+          ),
+        );
 
   void changeThemeMode(ThemeMode themeMode) {
     emit(state.copyWith(themeMode: themeMode));

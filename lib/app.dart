@@ -5,6 +5,7 @@ import 'package:tattoo_appointment/core/constants/app/app_constants.dart';
 import 'package:tattoo_appointment/core/utils/localization/app_langs.dart';
 import 'package:tattoo_appointment/core/utils/localization/localization_manager.dart';
 import 'package:tattoo_appointment/core/utils/router/app_router.dart';
+import 'package:tattoo_appointment/injection.dart';
 import 'package:tattoo_appointment/presentation/blocs/theme/theme_cubit.dart';
 
 class MainApp extends StatelessWidget {
@@ -30,8 +31,9 @@ class MainApp extends StatelessWidget {
               supportedLocales: context.supportedLocales,
               locale:
                   LocalizationManager.instance.currentLang(context).toLocale,
-              onGenerateRoute: AppRouter.instance.onGenerateRoute,
-              initialRoute: AppRouter.instance.initialRoute,
+              onGenerateRoute: Injection.read<AppRouter>().onGenerateRoute,
+              navigatorKey: Injection.read<GlobalKey<NavigatorState>>(),
+              initialRoute: Injection.read<AppRouter>().initialRoute,
             );
           },
         ),

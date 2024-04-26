@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:tattoo_appointment/core/utils/localization/app_langs.dart';
 
 final class LocalizationManager {
-  static const LocalizationManager instance = LocalizationManager._init();
   const LocalizationManager._init();
+  static const LocalizationManager instance = LocalizationManager._init();
 
   List<Locale> get supportedLocales =>
       AppLangs.values.map((e) => e.toLocale).toList();
@@ -16,7 +16,8 @@ final class LocalizationManager {
     final lang = (ctxLocale.countryCode == null)
         ? defaultLang
         : AppLangs.fromString(
-            "${ctxLocale.languageCode}_${ctxLocale.countryCode!}");
+            '${ctxLocale.languageCode}_${ctxLocale.countryCode!}',
+          );
     return lang;
   }
 

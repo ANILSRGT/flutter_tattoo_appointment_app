@@ -1,12 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:tattoo_appointment/core/utils/router/guards/route_guard_types.dart';
 import 'package:tattoo_appointment/presentation/pages/auth/auth_page.dart';
+import 'package:tattoo_appointment/presentation/pages/onboarding/onboarding_page.dart';
 import 'package:tattoo_appointment/presentation/pages/splash/splash_page.dart';
 
 enum AppRoutes {
+  notFound(
+    path: '/notFound',
+    page: Scaffold(
+      body: Center(
+        child: Text('Not Found'),
+      ),
+    ),
+  ),
   splash(
     path: '/splash',
     page: SplashPage(),
+  ),
+  onboarding(
+    path: '/onboarding',
+    page: OnBoardingPage(),
   ),
   auth(
     path: '/auth',
@@ -20,14 +33,6 @@ enum AppRoutes {
       ),
     ),
     guards: [RouteGuardTypes.auth],
-  ),
-  notFound(
-    path: '/not-found',
-    page: Scaffold(
-      body: Center(
-        child: Text('Not Found'),
-      ),
-    ),
   );
 
   const AppRoutes({
@@ -42,13 +47,12 @@ enum AppRoutes {
 
   static String get initialRoute => AppRoutes.splash.path;
 
-  static AppRoutes fromString(String path) {
-    for (var route in AppRoutes.values) {
-      if (route.path == path) {
-        return route;
-      }
-    }
+  static AppRoutes fromString(String? path) {
+    if (path == null) return AppRoutes.notFound;
 
-    return AppRoutes.notFound;
+    return AppRoutes.values.firstWhere(
+      (route) => route.path == path,
+      orElse: () => AppRoutes.notFound,
+    );
   }
 }

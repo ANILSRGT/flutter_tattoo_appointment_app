@@ -1,5 +1,10 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:tattoo_appointment/core/utils/cache/cache_keys.dart';
+import 'package:tattoo_appointment/core/utils/cache/cache_manager.dart';
+import 'package:tattoo_appointment/core/utils/router/app_router.dart';
+import 'package:tattoo_appointment/core/utils/router/app_routes.dart';
+import 'package:tattoo_appointment/injection.dart';
 
 part 'splash_page_mixin.dart';
 

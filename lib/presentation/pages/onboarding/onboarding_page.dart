@@ -2,6 +2,9 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:tattoo_appointment/core/constants/localization/local_keys.g.dart';
 import 'package:tattoo_appointment/core/extensions/string_ext.dart';
+import 'package:tattoo_appointment/core/utils/router/app_router.dart';
+import 'package:tattoo_appointment/core/utils/router/app_routes.dart';
+import 'package:tattoo_appointment/injection.dart';
 
 part 'onboarding_page_mixin.dart';
 
@@ -21,7 +24,6 @@ class _OnBoardingPageState extends State<OnBoardingPage>
         padding: context.ext.padding.all.lg,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
-          mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             context.ext.sizedBox.width.full,
