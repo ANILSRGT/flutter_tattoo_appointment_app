@@ -1,0 +1,18 @@
+// ignore_for_file: library_private_types_in_public_api
+
+import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+
+part 'material_color_ext.dart';
+
+extension ColorExt on Color {
+  _ColorExt get ext => _ColorExt(this);
+}
+
+final class _ColorExt {
+  const _ColorExt(Color color) : _color = color;
+
+  final Color _color;
+
+  _MaterialColorExt get material => _MaterialColorExt(_color);
+}

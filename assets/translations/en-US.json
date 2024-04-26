@@ -1,0 +1,19 @@
+{
+    "pages": {
+        "onboarding": {
+            "description": {
+                "part1": "Let's get",
+                "part2": "tattoos"
+            },
+            "buttons": {
+                "getStarted": "Get Started"
+            }
+        },
+        "auth": {
+            "title": {
+                "signIn": "Sign In",
+                "signUp": "Sign Up"
+            }
+        }
+    }
+}

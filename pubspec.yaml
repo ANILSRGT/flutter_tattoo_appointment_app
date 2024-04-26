@@ -1,0 +1,35 @@
+name: tattoo_appointment
+description: "A new Flutter project."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.3.4 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  flutter_bloc: ^8.1.5
+
+  # Localizations
+  easy_localization: ^3.0.6
+
+  # Serialization
+  equatable: ^2.0.5
+
+  # Modules
+  core:
+    path: modules/core
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  build_runner: ^2.4.9
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/translations/
