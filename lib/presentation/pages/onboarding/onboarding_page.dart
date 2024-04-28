@@ -1,7 +1,7 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:tattoo_appointment/core/constants/localization/local_keys.g.dart';
-import 'package:tattoo_appointment/core/extensions/string_ext.dart';
+import 'package:tattoo_appointment/core/extensions/string/string_ext.dart';
 import 'package:tattoo_appointment/core/utils/router/app_router.dart';
 import 'package:tattoo_appointment/core/utils/router/app_routes.dart';
 import 'package:tattoo_appointment/injection.dart';
@@ -20,21 +20,63 @@ class _OnBoardingPageState extends State<OnBoardingPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: context.ext.padding.all.lg,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            context.ext.sizedBox.width.full,
-            Text(LocalKeys.pagesOnboardingDescriptionPart1.toTr),
-            Text(LocalKeys.pagesOnboardingDescriptionPart2.toTr),
-            context.ext.sizedBox.height.lg,
-            ElevatedButton(
-              onPressed: _navigateToNextPage,
-              child: Text(LocalKeys.pagesOnboardingButtonsGetStarted.toTr),
+      body: _buildBody,
+    );
+  }
+
+  Padding get _buildBody {
+    return Padding(
+      padding: context.ext.padding.all.lg,
+      child: Align(
+        alignment: Alignment.bottomCenter,
+        child: SingleChildScrollView(
+          child: _bodyContent,
+        ),
+      ),
+    );
+  }
+
+  Column get _bodyContent {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        context.ext.sizedBox.width.full,
+        _descriptionTexts,
+        context.ext.sizedBox.height.lg,
+        _getStartedBtn,
+      ],
+    );
+  }
+
+  RichText get _descriptionTexts {
+    return RichText(
+      text: TextSpan(
+        text:
+            '${LocalKeys.pagesOnboardingDescriptionPart1.appExt.locale.toTr}\n',
+        style: context.ext.theme.textTheme.headlineMedium?.copyWith(
+          fontWeight: FontWeight.w600,
+        ),
+        children: [
+          TextSpan(
+            text: LocalKeys.pagesOnboardingDescriptionPart2.appExt.locale.toTr,
+            style: context.ext.theme.textTheme.displayMedium?.copyWith(
+              fontWeight: FontWeight.bold,
             ),
-          ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  SizedBox get _getStartedBtn {
+    return SizedBox(
+      width: double.infinity,
+      height: 50,
+      child: ElevatedButton(
+        onPressed: _navigateToNextPage,
+        child: Text(
+          LocalKeys.pagesOnboardingButtonsGetStarted.appExt.locale.toTr,
         ),
       ),
     );

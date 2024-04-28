@@ -10,9 +10,82 @@
             }
         },
         "auth": {
-            "title": {
+            "pageSignStateTitle": {
                 "signIn": "Sign In",
                 "signUp": "Sign Up"
+            },
+            "fields": {
+                "signIn": {
+                    "email": {
+                        "hint": "Email",
+                        "valids": {
+                            "required": "Email is required",
+                            "invalid": "Email is invalid"
+                        }
+                    },
+                    "password": {
+                        "hint": "Password",
+                        "valids": {
+                            "required": "Password is required"
+                        }
+                    }
+                },
+                "signUp": {
+                    "firstName": {
+                        "hint": "First Name",
+                        "valids": {
+                            "required": "First Name is required",
+                            "minLength": "Min {} characters",
+                            "maxLength": "Max {} characters"
+                        }
+                    },
+                    "lastName": {
+                        "hint": "Last Name",
+                        "valids": {
+                            "required": "Last Name is required",
+                            "minLength": "Min {} characters",
+                            "maxLength": "Max {} characters"
+                        }
+                    },
+                    "email": {
+                        "hint": "Email",
+                        "valids": {
+                            "required": "Email is required",
+                            "invalid": "Email is invalid"
+                        }
+                    },
+                    "password": {
+                        "hint": "Password",
+                        "valids": {
+                            "required": "Password is required",
+                            "minLength": "Min {} characters"
+                        }
+                    },
+                    "confirmPassword": {
+                        "hint": "Confirm Password",
+                        "valids": {
+                            "required": "Confirm Password is required",
+                            "notMatch": "Passwords do not match"
+                        }
+                    }
+                }
+            },
+            "buttons": {
+                "submit": {
+                    "signIn": "Sign In",
+                    "signUp": "Sign Up"
+                },
+                "forgotPassword": "Forgot Password?",
+                "haveAccount": {
+                    "have": {
+                        "part1": "Already have an account?",
+                        "part2": "Sign In"
+                    },
+                    "dontHave": {
+                        "part1": "Don't have an account?",
+                        "part2": "Sign Up"
+                    }
+                }
             }
         }
     }

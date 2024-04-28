@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:tattoo_appointment/core/utils/router/app_routes.dart';
+import 'package:tattoo_appointment/core/utils/router/auth_guard.dart';
 import 'package:tattoo_appointment/core/utils/router/inav.dart';
 
 final class AppRouter {
   const AppRouter({
+    required this.isAuthenticated,
     required INav navigator,
   }) : _navigator = navigator;
 
+  final Stream<bool> isAuthenticated;
   final INav _navigator;
 
   Future<void> init() async {
@@ -27,7 +30,16 @@ final class AppRouter {
         name: route.path,
         arguments: arguments,
       ),
-      builder: (_) => route.page,
+      builder: (_) {
+        if (route.hasAuthGuard) {
+          return AuthGuard(
+            isAuthenticated: isAuthenticated,
+            child: route.page,
+          );
+        }
+
+        return route.page;
+      },
     );
   }
 

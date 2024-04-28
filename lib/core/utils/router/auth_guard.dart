@@ -3,20 +3,20 @@ import 'package:tattoo_appointment/core/utils/router/app_routes.dart';
 
 class AuthGuard extends StatelessWidget {
   const AuthGuard({
+    required this.isAuthenticated,
     required this.child,
     super.key,
   });
 
+  /// If data is true, the user is authenticated and the child widget is shown.
+  /// <br>If data is false, the user is not authenticated and the auth page is shown.
+  final Stream<bool> isAuthenticated;
   final Widget child;
 
   @override
   Widget build(BuildContext context) {
-    Future<bool> checkAuth() async {
-      return true;
-    }
-
-    return FutureBuilder(
-      future: checkAuth(),
+    return StreamBuilder<bool>(
+      stream: isAuthenticated,
       builder: (context, AsyncSnapshot<bool> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Scaffold(

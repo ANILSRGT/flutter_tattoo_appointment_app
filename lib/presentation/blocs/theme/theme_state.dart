@@ -1,6 +1,5 @@
 part of 'theme_cubit.dart';
 
-@immutable
 final class ThemeState with EquatableMixin {
   const ThemeState({
     required this.currentTheme,

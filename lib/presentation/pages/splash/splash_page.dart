@@ -19,19 +19,29 @@ class _SplashPageState extends State<SplashPage> with SplashPageMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: context.ext.padding.all.lg,
-        child: const Center(
-          child: Column(
-            children: [
-              Spacer(),
-              FlutterLogo(size: 100),
-              Spacer(),
-              CircularProgressIndicator.adaptive(),
-            ],
-          ),
+      body: _buildBody,
+    );
+  }
+
+  Padding get _buildBody {
+    return Padding(
+      padding: context.ext.padding.all.lg,
+      child: Center(
+        child: Column(
+          children: [
+            const Spacer(),
+            _appLogo,
+            const Spacer(),
+            _progressIndicator,
+          ],
         ),
       ),
     );
+  }
+
+  FlutterLogo get _appLogo => const FlutterLogo(size: 100);
+
+  CircularProgressIndicator get _progressIndicator {
+    return const CircularProgressIndicator.adaptive();
   }
 }

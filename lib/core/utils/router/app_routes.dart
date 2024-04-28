@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tattoo_appointment/core/utils/router/guards/route_guard_types.dart';
 import 'package:tattoo_appointment/presentation/pages/auth/auth_page.dart';
 import 'package:tattoo_appointment/presentation/pages/onboarding/onboarding_page.dart';
 import 'package:tattoo_appointment/presentation/pages/splash/splash_page.dart';
@@ -7,6 +6,7 @@ import 'package:tattoo_appointment/presentation/pages/splash/splash_page.dart';
 enum AppRoutes {
   notFound(
     path: '/notFound',
+    hasAuthGuard: false,
     page: Scaffold(
       body: Center(
         child: Text('Not Found'),
@@ -15,35 +15,38 @@ enum AppRoutes {
   ),
   splash(
     path: '/splash',
+    hasAuthGuard: false,
     page: SplashPage(),
   ),
   onboarding(
     path: '/onboarding',
+    hasAuthGuard: false,
     page: OnBoardingPage(),
   ),
   auth(
     path: '/auth',
+    hasAuthGuard: false,
     page: AuthPage(),
   ),
   home(
     path: '/home',
+    hasAuthGuard: true,
     page: Scaffold(
       body: Center(
         child: Text('Home'),
       ),
     ),
-    guards: [RouteGuardTypes.auth],
   );
 
   const AppRoutes({
     required this.path,
     required this.page,
-    this.guards = const [],
+    required this.hasAuthGuard,
   });
 
   final String path;
   final Widget page;
-  final List<RouteGuardTypes> guards;
+  final bool hasAuthGuard;
 
   static String get initialRoute => AppRoutes.splash.path;
 

@@ -18,7 +18,13 @@ final class Injection {
       ..registerSingleton<GlobalKey<NavigatorState>>(navigatorKey)
       ..registerSingleton<INav>(MaterialNav(navigatorKey: _getIt()));
     await _getIt
-        .registerSingleton<AppRouter>(AppRouter(navigator: _getIt()))
+        .registerSingleton<AppRouter>(
+          AppRouter(
+            // TODO: Authenticated check stream
+            isAuthenticated: Stream.value(false),
+            navigator: _getIt(),
+          ),
+        )
         .init();
     //~ Cache
     _getIt.registerSingleton<ICache>(HiveCache());
