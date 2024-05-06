@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tattoo_appointment/app.dart';
 import 'package:tattoo_appointment/core/constants/app/app_constants.dart';
 import 'package:tattoo_appointment/core/utils/localization/app_langs.dart';
@@ -8,6 +9,17 @@ import 'package:tattoo_appointment/injection.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // System Chrome settings
+  await SystemChrome.setPreferredOrientations(
+    [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
+  );
+  await SystemChrome.setEnabledSystemUIMode(
+    SystemUiMode.immersiveSticky,
+    overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom],
+  );
+
+  // Register dependencies
   await EasyLocalization.ensureInitialized();
   await Injection.registerDependencies();
 

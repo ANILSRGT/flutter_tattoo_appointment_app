@@ -6,6 +6,8 @@ final class AppColor {
     required this.primary,
     required this.secondary,
     required this.tertiary,
+    required this.black,
+    required this.white,
     required this.grey,
     required this.error,
     required this.success,
@@ -15,6 +17,8 @@ final class AppColor {
   final ThemeColor primary;
   final ThemeColor secondary;
   final ThemeColor tertiary;
+  final ThemeColor black;
+  final ThemeColor white;
   final ThemeColor grey;
   final ThemeColor error;
   final ThemeColor success;

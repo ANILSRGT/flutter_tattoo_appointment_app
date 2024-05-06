@@ -1,10 +1,12 @@
 part of 'context_ext.dart';
 
 final class _ScreenContextExt {
-  const _ScreenContextExt(this.context);
-  final BuildContext context;
+  const _ScreenContextExt(BuildContext context) : _context = context;
+  final BuildContext _context;
 
-  Size get size => MediaQuery.of(context).size;
+  MediaQueryData get _mediaQuery => MediaQuery.of(_context);
+
+  Size get size => _mediaQuery.size;
   double get width => size.width;
   double get height => size.height;
 }

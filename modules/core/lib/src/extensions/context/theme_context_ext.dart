@@ -1,10 +1,10 @@
 part of 'context_ext.dart';
 
 final class _ThemeContextExt {
-  const _ThemeContextExt(this.context);
-  final BuildContext context;
+  const _ThemeContextExt(BuildContext context) : _context = context;
+  final BuildContext _context;
 
-  ThemeData get theme => Theme.of(context);
+  ThemeData get theme => Theme.of(_context);
   TextTheme get textTheme => theme.textTheme;
   ColorScheme get colorScheme => theme.colorScheme;
   Brightness get brightness => theme.brightness;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tattoo_appointment/presentation/pages/auth/auth_page.dart';
+import 'package:tattoo_appointment/presentation/pages/home/home_page.dart';
 import 'package:tattoo_appointment/presentation/pages/onboarding/onboarding_page.dart';
 import 'package:tattoo_appointment/presentation/pages/splash/splash_page.dart';
 
@@ -31,11 +32,7 @@ enum AppRoutes {
   home(
     path: '/home',
     hasAuthGuard: true,
-    page: Scaffold(
-      body: Center(
-        child: Text('Home'),
-      ),
-    ),
+    page: HomePage(),
   );
 
   const AppRoutes({

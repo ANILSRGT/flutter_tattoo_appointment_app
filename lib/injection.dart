@@ -21,7 +21,7 @@ final class Injection {
         .registerSingleton<AppRouter>(
           AppRouter(
             // TODO: Authenticated check stream
-            isAuthenticated: Stream.value(false),
+            isAuthenticated: Stream.value(true),
             navigator: _getIt(),
           ),
         )

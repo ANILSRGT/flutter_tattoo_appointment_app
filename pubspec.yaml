@@ -40,3 +40,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/translations/
+    - assets/images/landscape/
+    - assets/images/portrait/
+    - assets/images/svg/landscape/
+    - assets/images/svg/portrait/

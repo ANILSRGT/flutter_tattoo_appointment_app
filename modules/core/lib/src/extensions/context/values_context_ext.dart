@@ -1,8 +1,10 @@
 part of 'context_ext.dart';
 
 final class _ValuesContextExt {
-  const _ValuesContextExt(this.context);
-  final BuildContext context;
+  const _ValuesContextExt();
+
+  /// 0 pixels
+  double get zero => 0;
 
   /// 4 pixels
   double get xs => 4;

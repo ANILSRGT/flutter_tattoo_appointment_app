@@ -32,6 +32,14 @@ final class MainTheme implements ITheme {
           color: Color(0xFF1EC17D),
           onColor: Color(0xFFFBFBFB),
         ),
+        black: ThemeColor(
+          color: Color(0xFF1D1D1D),
+          onColor: Color(0xFFFBFBFB),
+        ),
+        white: ThemeColor(
+          color: Color(0xFFFBFBFB),
+          onColor: Color(0xFF1D1D1D),
+        ),
         grey: ThemeColor(
           color: Color(0xFFBDBDBD),
           onColor: Color(0xFF1D1D1D),
