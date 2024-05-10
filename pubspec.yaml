@@ -10,6 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # UI
+  easy_sticky_header: ^1.1.1
+
   # State Management
   flutter_bloc: ^8.1.5
   get_it: ^7.7.0
@@ -25,6 +28,7 @@ dependencies:
 
   # Utils
   path_provider: ^2.1.3
+  google_fonts: ^6.2.1
 
   # Modules
   core:
@@ -41,6 +45,3 @@ flutter:
   assets:
     - assets/translations/
     - assets/images/landscape/
-    - assets/images/portrait/
-    - assets/images/svg/landscape/
-    - assets/images/svg/portrait/

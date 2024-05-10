@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
 part 'validation_string_ext.dart';
+part 'random_string_ext.dart';
 
 extension StringExt on String? {
   _StringExt get ext => _StringExt(this);
@@ -12,4 +13,5 @@ final class _StringExt {
   final String? _value;
 
   _ValidationStringExt get validation => _ValidationStringExt(_value);
+  _RandomStringExt get random => _RandomStringExt(_value);
 }

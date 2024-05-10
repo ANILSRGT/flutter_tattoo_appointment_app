@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tattoo_appointment/app.dart';
@@ -18,6 +19,12 @@ Future<void> main() async {
     SystemUiMode.immersiveSticky,
     overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom],
   );
+
+  // Register Google Fonts licenses
+  LicenseRegistry.addLicense(() async* {
+    final license = await rootBundle.loadString('assets/fonts/lato/OFL.txt');
+    yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+  });
 
   // Register dependencies
   await EasyLocalization.ensureInitialized();

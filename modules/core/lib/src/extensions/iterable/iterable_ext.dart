@@ -1,4 +1,4 @@
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api, strict_raw_type
 
 part 'where_iterable_ext.dart';
 

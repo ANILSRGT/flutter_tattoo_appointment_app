@@ -6,7 +6,7 @@ import 'package:tattoo_appointment/core/extensions/context/context_ext.dart';
 import 'package:tattoo_appointment/core/extensions/string/string_ext.dart';
 import 'package:tattoo_appointment/presentation/pages/auth/auth_validations.dart';
 import 'package:tattoo_appointment/presentation/pages/auth/cubit/auth_page_cubit.dart';
-import 'package:tattoo_appointment/presentation/shared/widgets/app_text_field.dart';
+import 'package:tattoo_appointment/presentation/shared/widgets/fields/app_text_field.dart';
 
 part 'auth_page_mixin.dart';
 

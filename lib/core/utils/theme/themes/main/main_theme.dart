@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:tattoo_appointment/core/utils/theme/app_color.dart';
 import 'package:tattoo_appointment/core/utils/theme/itheme.dart';
 import 'package:tattoo_appointment/core/utils/theme/theme_color.dart';
@@ -63,62 +64,77 @@ final class MainTheme implements ITheme {
           .copyWith(
             displayLarge: data.textTheme.displayLarge?.copyWith(
               fontSize: 57,
+              overflow: TextOverflow.ellipsis,
             ),
             displayMedium: data.textTheme.displayMedium?.copyWith(
               fontSize: 45,
+              overflow: TextOverflow.ellipsis,
             ),
             displaySmall: data.textTheme.displaySmall?.copyWith(
               fontSize: 36,
+              overflow: TextOverflow.ellipsis,
             ),
             headlineLarge: data.textTheme.headlineLarge?.copyWith(
               fontSize: 32,
+              overflow: TextOverflow.ellipsis,
             ),
             headlineMedium: data.textTheme.headlineMedium?.copyWith(
               fontSize: 28,
+              overflow: TextOverflow.ellipsis,
             ),
             headlineSmall: data.textTheme.headlineSmall?.copyWith(
               fontSize: 24,
+              overflow: TextOverflow.ellipsis,
             ),
             titleLarge: data.textTheme.titleLarge?.copyWith(
               fontSize: 22,
               fontWeight: FontWeight.w500,
+              overflow: TextOverflow.ellipsis,
             ),
             titleMedium: data.textTheme.titleMedium?.copyWith(
               fontSize: 16,
               letterSpacing: 0.15,
               fontWeight: FontWeight.w500,
+              overflow: TextOverflow.ellipsis,
             ),
             titleSmall: data.textTheme.titleSmall?.copyWith(
               fontSize: 14,
               letterSpacing: 0.1,
               fontWeight: FontWeight.w500,
+              overflow: TextOverflow.ellipsis,
             ),
             labelLarge: data.textTheme.labelLarge?.copyWith(
               fontSize: 14,
               letterSpacing: 0.1,
               fontWeight: FontWeight.w500,
+              overflow: TextOverflow.ellipsis,
             ),
             labelMedium: data.textTheme.labelMedium?.copyWith(
               fontSize: 12,
               letterSpacing: 0.5,
               fontWeight: FontWeight.w500,
+              overflow: TextOverflow.ellipsis,
             ),
             labelSmall: data.textTheme.labelSmall?.copyWith(
               fontSize: 11,
               letterSpacing: 0.5,
               fontWeight: FontWeight.w500,
+              overflow: TextOverflow.ellipsis,
             ),
             bodyLarge: data.textTheme.bodyLarge?.copyWith(
               fontSize: 16,
               letterSpacing: 0.15,
+              overflow: TextOverflow.ellipsis,
             ),
             bodyMedium: data.textTheme.bodyMedium?.copyWith(
               fontSize: 14,
               letterSpacing: 0.25,
+              overflow: TextOverflow.ellipsis,
             ),
             bodySmall: data.textTheme.bodySmall?.copyWith(
               fontSize: 12,
               letterSpacing: 0.4,
+              overflow: TextOverflow.ellipsis,
             ),
           )
           .apply(
@@ -131,7 +147,11 @@ final class MainTheme implements ITheme {
             decorationColor: isDark
                 ? appColor.background.color
                 : appColor.background.onColor,
+            fontFamily: GoogleFonts.lato().fontFamily,
           ),
+    );
+    data = data.copyWith(
+      textTheme: GoogleFonts.latoTextTheme(data.textTheme),
     );
     return data.copyWith(
       scaffoldBackgroundColor:
@@ -147,8 +167,8 @@ final class MainTheme implements ITheme {
             borderRadius: BorderRadius.circular(16),
           ),
           padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 12,
+            horizontal: 8,
+            vertical: 4,
           ),
         ),
       ),
