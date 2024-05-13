@@ -10,4 +10,10 @@ final class _ThemeContextExt {
   Brightness get brightness => theme.brightness;
   bool get isDark => brightness == Brightness.dark;
   bool get isLight => brightness == Brightness.light;
+
+  T convertByBrightness<T>({
+    required T light,
+    required T dark,
+  }) =>
+      isLight ? light : dark;
 }

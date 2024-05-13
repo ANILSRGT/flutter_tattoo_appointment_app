@@ -4,10 +4,12 @@ import 'dart:math' as math;
 
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:tattoo_appointment/core/constants/localization/local_keys.g.dart';
 import 'package:tattoo_appointment/core/constants/path/image_path.dart';
 import 'package:tattoo_appointment/core/extensions/context/context_ext.dart';
+import 'package:tattoo_appointment/core/extensions/string/string_ext.dart';
 import 'package:tattoo_appointment/presentation/pages/home/cubit/home_page_cubit.dart';
-import 'package:tattoo_appointment/presentation/shared/widgets/tattoo_cards/medium_tattoo_card.dart';
+import 'package:tattoo_appointment/presentation/widgets/tattoo_cards/medium_tattoo_card.dart';
 
 part 'home_page_mixin.dart';
 
@@ -107,7 +109,7 @@ class _HomePageState extends State<HomePage> with HomePageMixin {
       backgroundColor: MaterialStatePropertyAll<Color>(
         context.extApp.theme.currentThemeColor.black.color,
       ),
-      hintText: 'Search for tattoos...',
+      hintText: LocalKeys.pagesHomeSearchPlaceholder.appExt.locale.toTr,
       trailing: [
         FloatingActionButton.small(
           onPressed: () => _search(_searchController.text),
@@ -126,7 +128,7 @@ class _HomePageState extends State<HomePage> with HomePageMixin {
 
   Widget get _headerSlogan {
     return Text(
-      'Traces of Art: With You!',
+      LocalKeys.pagesHomeTitleSlogan.appExt.locale.toTr,
       style: context.ext.theme.textTheme.titleLarge?.copyWith(
         color: context.extApp.theme.currentThemeColor.white.color,
         fontWeight: FontWeight.w600,
@@ -148,7 +150,7 @@ class _HomePageState extends State<HomePage> with HomePageMixin {
     return Padding(
       padding: context.ext.padding.all.md,
       child: Text(
-        'Popular Tattoos',
+        LocalKeys.pagesHomePopularTattoosTitle.appExt.locale.toTr,
         maxLines: 1,
         style: context.ext.theme.textTheme.headlineSmall?.copyWith(
           fontWeight: FontWeight.bold,
@@ -165,6 +167,7 @@ class _HomePageState extends State<HomePage> with HomePageMixin {
         itemCount: 8,
         padding: context.ext.padding.horizontal.sm,
         separatorBuilder: (_, __) => context.ext.sizedBox.width.sm,
+        clipBehavior: Clip.none,
         itemBuilder: (_, index) {
           return _popularTattooItem(index);
         },
@@ -197,7 +200,7 @@ class _HomePageState extends State<HomePage> with HomePageMixin {
     return Padding(
       padding: context.ext.padding.all.md,
       child: Text(
-        'Minimalist Tattoos',
+        LocalKeys.pagesHomeMinimalistTattoosTitle.appExt.locale.toTr,
         maxLines: 1,
         style: context.ext.theme.textTheme.headlineSmall?.copyWith(
           fontWeight: FontWeight.bold,
@@ -214,6 +217,7 @@ class _HomePageState extends State<HomePage> with HomePageMixin {
         itemCount: 5,
         padding: context.ext.padding.horizontal.sm,
         separatorBuilder: (_, __) => context.ext.sizedBox.width.sm,
+        clipBehavior: Clip.none,
         itemBuilder: (_, index) {
           return _minimalistTattooItem(index);
         },

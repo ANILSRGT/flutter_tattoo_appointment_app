@@ -214,6 +214,29 @@ final class MainTheme implements ITheme {
           ),
         ),
       ),
+      bottomNavigationBarTheme: data.bottomNavigationBarTheme.copyWith(
+        backgroundColor:
+            isDark ? appColor.background.onColor : appColor.background.color,
+        selectedItemColor:
+            isDark ? appColor.tertiary.color : appColor.primary.color,
+        unselectedItemColor: appColor.grey.color,
+        selectedIconTheme: data.iconTheme.copyWith(
+          color: isDark ? appColor.tertiary.color : appColor.primary.color,
+          size: 28,
+        ),
+        unselectedIconTheme: data.iconTheme.copyWith(
+          color: appColor.grey.color,
+          size: 22,
+        ),
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        selectedLabelStyle: data.textTheme.labelMedium?.copyWith(
+          fontWeight: FontWeight.w500,
+        ),
+        unselectedLabelStyle: data.textTheme.labelMedium?.copyWith(
+          fontWeight: FontWeight.w500,
+        ),
+      ),
     );
   }
 }

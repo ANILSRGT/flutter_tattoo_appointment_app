@@ -1,6 +1,8 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:tattoo_appointment/core/constants/localization/local_keys.g.dart';
 import 'package:tattoo_appointment/core/extensions/context/context_ext.dart';
+import 'package:tattoo_appointment/core/extensions/string/string_ext.dart';
 
 class MediumTattooCard extends StatelessWidget {
   const MediumTattooCard({
@@ -24,7 +26,10 @@ class MediumTattooCard extends StatelessWidget {
       width: context.ext.screen.width * 0.4,
       decoration: BoxDecoration(
         borderRadius: context.ext.radius.border.all.sm,
-        color: context.extApp.theme.currentThemeColor.black.color,
+        color: context.ext.theme.convertByBrightness(
+          light: context.extApp.theme.currentThemeColor.white.color,
+          dark: context.extApp.theme.currentThemeColor.black.color,
+        ),
       ),
       clipBehavior: Clip.antiAlias,
       child: Column(
@@ -48,7 +53,10 @@ class MediumTattooCard extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             style: context.ext.theme.textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.w500,
-              color: context.extApp.theme.currentThemeColor.black.onColor,
+              color: context.ext.theme.convertByBrightness(
+                light: context.extApp.theme.currentThemeColor.white.onColor,
+                dark: context.extApp.theme.currentThemeColor.black.onColor,
+              ),
             ),
           ),
           context.ext.sizedBox.height.md,
@@ -61,7 +69,10 @@ class MediumTattooCard extends StatelessWidget {
                   borderRadius: context.ext.radius.border.all.xs,
                 ),
               ),
-              child: const Text('View'),
+              child: Text(
+                LocalKeys.pagesWidgetsMedium_tattoo_cardViewButton.appExt.locale
+                    .toTr,
+              ),
             ),
           ),
         ],

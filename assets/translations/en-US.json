@@ -87,6 +87,23 @@
                     }
                 }
             }
+        },
+        "home": {
+            "search": {
+                "placeholder": "Search for tattoos..."
+            },
+            "titleSlogan": "Traces of Art: With You!",
+            "popularTattoos": {
+                "title": "Popular Tattoos"
+            },
+            "minimalistTattoos": {
+                "title": "Minimalist Tattoos"
+            }
+        },
+        "widgets": {
+            "medium_tattoo_card": {
+                "viewButton": "View"
+            }
         }
     }
 }

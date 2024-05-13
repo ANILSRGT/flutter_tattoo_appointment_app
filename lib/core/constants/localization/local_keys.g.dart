@@ -37,4 +37,9 @@ final class LocalKeys {
 	static String get pagesAuthButtonsHaveAccountHavePart2 => 'pages.auth.buttons.haveAccount.have.part2';
 	static String get pagesAuthButtonsHaveAccountDontHavePart1 => 'pages.auth.buttons.haveAccount.dontHave.part1';
 	static String get pagesAuthButtonsHaveAccountDontHavePart2 => 'pages.auth.buttons.haveAccount.dontHave.part2';
+	static String get pagesHomeSearchPlaceholder => 'pages.home.search.placeholder';
+	static String get pagesHomeTitleSlogan => 'pages.home.titleSlogan';
+	static String get pagesHomePopularTattoosTitle => 'pages.home.popularTattoos.title';
+	static String get pagesHomeMinimalistTattoosTitle => 'pages.home.minimalistTattoos.title';
+	static String get pagesWidgetsMedium_tattoo_cardViewButton => 'pages.widgets.medium_tattoo_card.viewButton';
 }
