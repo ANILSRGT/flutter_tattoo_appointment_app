@@ -5,6 +5,7 @@ import 'package:tattoo_appointment/core/constants/localization/local_keys.g.dart
 import 'package:tattoo_appointment/core/extensions/context/context_ext.dart';
 import 'package:tattoo_appointment/core/extensions/string/string_ext.dart';
 import 'package:tattoo_appointment/presentation/widgets/fields/app_text_field.dart';
+import 'package:tattoo_appointment/presentation/widgets/navigation_button/nav_back_button.dart';
 
 part 'appointments_page_mixin.dart';
 
@@ -30,7 +31,18 @@ class _AppointmentsPageState extends State<AppointmentsPage>
         padding: context.ext.padding.all.lg,
         child: Column(
           children: [
-            _appointmentPickerTitle,
+            if (Navigator.canPop(context))
+              Row(
+                children: [
+                  const NavBackButton(
+                    foregroundColor: Colors.black,
+                  ),
+                  Expanded(child: _appointmentPickerTitle),
+                  context.ext.sizedBox.width.sm,
+                ],
+              )
+            else
+              _appointmentPickerTitle,
             context.ext.sizedBox.height.md,
             _appointmentDatePicker,
             context.ext.sizedBox.height.sm,
@@ -52,6 +64,7 @@ class _AppointmentsPageState extends State<AppointmentsPage>
   Widget get _appointmentPickerTitle {
     return Text(
       LocalKeys.pagesAppointmentsSelectAppointmentTitle.appExt.locale.toTr,
+      textAlign: TextAlign.center,
       style: context.ext.theme.textTheme.titleLarge,
     );
   }

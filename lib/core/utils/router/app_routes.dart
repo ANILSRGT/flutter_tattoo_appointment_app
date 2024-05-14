@@ -3,6 +3,7 @@ import 'package:tattoo_appointment/presentation/pages/appointments/appointments_
 import 'package:tattoo_appointment/presentation/pages/auth/auth_page.dart';
 import 'package:tattoo_appointment/presentation/pages/home/home_main_page.dart';
 import 'package:tattoo_appointment/presentation/pages/onboarding/onboarding_page.dart';
+import 'package:tattoo_appointment/presentation/pages/profile/profile_page.dart';
 import 'package:tattoo_appointment/presentation/pages/splash/splash_page.dart';
 
 enum AppRoutes {
@@ -39,6 +40,11 @@ enum AppRoutes {
     path: '/appointments',
     hasAuthGuard: true,
     page: AppointmentsPage(),
+  ),
+  profile(
+    path: '/profile',
+    hasAuthGuard: true,
+    page: ProfilePage(),
   );
 
   const AppRoutes({

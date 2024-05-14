@@ -116,6 +116,19 @@
                 "getButton": "Get"
             }
         },
+        "profile": {
+            "editProfileButton": "Edit Profile",
+            "infos": {
+                "gender": {
+                    "noGender": "Gender not specified",
+                    "male": "Male",
+                    "female": "Female",
+                    "other": "Other"
+                },
+                "changePassword": "Change Password"
+            },
+            "logOut": "Log Out"
+        },
         "widgets": {
             "medium_tattoo_card": {
                 "viewButton": "View"

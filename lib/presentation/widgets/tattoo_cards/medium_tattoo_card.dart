@@ -17,7 +17,6 @@ class MediumTattooCard extends StatelessWidget {
   final String title;
   final ImageProvider image;
   final void Function(String id) onView;
-  // 'assets/images/dummy/tattoo/dummy_tattoo${index + 1}.png'
 
   @override
   Widget build(BuildContext context) {

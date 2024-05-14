@@ -3,6 +3,7 @@ import 'package:tattoo_appointment/core/constants/localization/local_keys.g.dart
 import 'package:tattoo_appointment/core/extensions/string/string_ext.dart';
 import 'package:tattoo_appointment/presentation/pages/appointments/appointments_page.dart';
 import 'package:tattoo_appointment/presentation/pages/home/home_page.dart';
+import 'package:tattoo_appointment/presentation/pages/profile/profile_page.dart';
 
 class HomeMainPage extends StatefulWidget {
   const HomeMainPage({super.key});
@@ -18,7 +19,7 @@ class _HomeMainPageState extends State<HomeMainPage> {
   final List<Widget> _pages = const [
     HomePage(),
     AppointmentsPage(),
-    Scaffold(body: Center(child: Text('Profile'))),
+    ProfilePage(),
   ];
 
   @override

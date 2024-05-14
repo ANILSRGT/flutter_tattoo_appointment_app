@@ -47,5 +47,12 @@ final class LocalKeys {
 	static String get pagesAppointmentsSelectAppointmentTitle => 'pages.appointments.selectAppointment.title';
 	static String get pagesAppointmentsSelectAppointmentSelectDateFieldHint => 'pages.appointments.selectAppointment.selectDateField.hint';
 	static String get pagesAppointmentsSelectAppointmentGetButton => 'pages.appointments.selectAppointment.getButton';
+	static String get pagesProfileEditProfileButton => 'pages.profile.editProfileButton';
+	static String get pagesProfileInfosGenderNoGender => 'pages.profile.infos.gender.noGender';
+	static String get pagesProfileInfosGenderMale => 'pages.profile.infos.gender.male';
+	static String get pagesProfileInfosGenderFemale => 'pages.profile.infos.gender.female';
+	static String get pagesProfileInfosGenderOther => 'pages.profile.infos.gender.other';
+	static String get pagesProfileInfosChangePassword => 'pages.profile.infos.changePassword';
+	static String get pagesProfileLogOut => 'pages.profile.logOut';
 	static String get pagesWidgetsMedium_tattoo_cardViewButton => 'pages.widgets.medium_tattoo_card.viewButton';
 }
