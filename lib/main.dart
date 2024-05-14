@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -6,6 +7,7 @@ import 'package:tattoo_appointment/app.dart';
 import 'package:tattoo_appointment/core/constants/app/app_constants.dart';
 import 'package:tattoo_appointment/core/utils/localization/app_langs.dart';
 import 'package:tattoo_appointment/core/utils/localization/localization_manager.dart';
+import 'package:tattoo_appointment/firebase_options.dart';
 import 'package:tattoo_appointment/injection.dart';
 
 Future<void> main() async {
@@ -28,6 +30,9 @@ Future<void> main() async {
 
   // Register dependencies
   await EasyLocalization.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await Injection.registerDependencies();
 
   runApp(
