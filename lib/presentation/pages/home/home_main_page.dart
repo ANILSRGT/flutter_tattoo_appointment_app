@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tattoo_appointment/core/constants/localization/local_keys.g.dart';
+import 'package:tattoo_appointment/core/extensions/string/string_ext.dart';
 import 'package:tattoo_appointment/presentation/pages/appointments/appointments_page.dart';
 import 'package:tattoo_appointment/presentation/pages/home/home_page.dart';
 
@@ -51,18 +53,20 @@ class _HomeMainPageState extends State<HomeMainPage> {
               curve: Curves.easeInOut,
             );
           },
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home_rounded),
-              label: 'Home',
+              icon: const Icon(Icons.home_rounded),
+              label: LocalKeys.pagesHomeMainPageNavbarHome.appExt.locale.toTr,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_today_rounded),
-              label: 'Appointments',
+              icon: const Icon(Icons.calendar_today_rounded),
+              label: LocalKeys
+                  .pagesHomeMainPageNavbarAppointments.appExt.locale.toTr,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person_rounded),
-              label: 'Profile',
+              icon: const Icon(Icons.person_rounded),
+              label:
+                  LocalKeys.pagesHomeMainPageNavbarProfile.appExt.locale.toTr,
             ),
           ],
         );

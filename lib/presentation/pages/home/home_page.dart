@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage> with HomePageMixin {
     return Text(
       LocalKeys.pagesHomeTitleSlogan.appExt.locale.toTr,
       style: context.ext.theme.textTheme.titleLarge?.copyWith(
-        color: context.extApp.theme.currentThemeColor.white.color,
+        color: context.extApp.theme.currentThemeColor.black.onColor,
         fontWeight: FontWeight.w600,
       ),
     );

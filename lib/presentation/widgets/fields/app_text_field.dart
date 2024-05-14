@@ -12,6 +12,10 @@ class AppTextField extends StatefulWidget {
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.onChanged,
     this.onFieldSubmitted,
+    this.onTap,
+    this.initialValue,
+    this.readOnly = false,
+    this.prefixIcon,
   });
 
   final TextEditingController controller;
@@ -23,6 +27,10 @@ class AppTextField extends StatefulWidget {
   final Iterable<String>? autofillHints;
   final void Function(String)? onChanged;
   final void Function(String)? onFieldSubmitted;
+  final VoidCallback? onTap;
+  final String? initialValue;
+  final bool readOnly;
+  final Widget? prefixIcon;
 
   @override
   State<AppTextField> createState() => _AppTextFieldState();
@@ -41,8 +49,12 @@ class _AppTextFieldState extends State<AppTextField> {
       autofillHints: widget.autofillHints,
       onChanged: widget.onChanged,
       onFieldSubmitted: widget.onFieldSubmitted,
+      onTap: widget.onTap,
+      initialValue: widget.initialValue,
+      readOnly: widget.readOnly,
       decoration: InputDecoration(
         hintText: widget.hintText,
+        prefixIcon: widget.prefixIcon,
       ),
     );
   }

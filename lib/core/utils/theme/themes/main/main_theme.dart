@@ -18,7 +18,7 @@ final class MainTheme implements ITheme {
           onColor: Color(0xFFFBFBFB),
         ),
         secondary: ThemeColor(
-          color: Color(0xFFB41EC1),
+          color: Color(0xFF4E0A6D),
           onColor: Color(0xFFFBFBFB),
         ),
         tertiary: ThemeColor(
@@ -36,10 +36,6 @@ final class MainTheme implements ITheme {
         black: ThemeColor(
           color: Color(0xFF1D1D1D),
           onColor: Color(0xFFFBFBFB),
-        ),
-        white: ThemeColor(
-          color: Color(0xFFFBFBFB),
-          onColor: Color(0xFF1D1D1D),
         ),
         grey: ThemeColor(
           color: Color(0xFFBDBDBD),
@@ -236,6 +232,50 @@ final class MainTheme implements ITheme {
         unselectedLabelStyle: data.textTheme.labelMedium?.copyWith(
           fontWeight: FontWeight.w500,
         ),
+      ),
+      listTileTheme: data.listTileTheme.copyWith(
+        tileColor:
+            isDark ? appColor.background.onColor : appColor.background.color,
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 8,
+          vertical: 4,
+        ),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        selectedColor: appColor.primary.color.withOpacity(0.1),
+        selectedTileColor: appColor.primary.color.withOpacity(0.1),
+        titleTextStyle: data.textTheme.bodyLarge?.copyWith(
+          fontWeight: FontWeight.w500,
+        ),
+        subtitleTextStyle: data.textTheme.bodySmall?.copyWith(
+          color: appColor.grey.color,
+        ),
+      ),
+      chipTheme: data.chipTheme.copyWith(
+        backgroundColor: appColor.black.color,
+        deleteIconColor: appColor.error.color,
+        disabledColor: appColor.grey.color,
+        selectedColor: appColor.primary.color,
+        secondarySelectedColor: appColor.secondary.color,
+        labelPadding: const EdgeInsets.symmetric(
+          horizontal: 6,
+          vertical: 2,
+        ),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 6,
+          vertical: 2,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        labelStyle: data.textTheme.bodySmall?.copyWith(
+          color: appColor.black.onColor,
+          fontWeight: FontWeight.w500,
+        ),
+        secondaryLabelStyle: data.textTheme.bodySmall?.copyWith(
+          color: appColor.secondary.onColor,
+          fontWeight: FontWeight.w500,
+        ),
+        brightness: isDark ? Brightness.dark : Brightness.light,
       ),
     );
   }

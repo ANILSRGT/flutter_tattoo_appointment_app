@@ -27,7 +27,7 @@ class MediumTattooCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: context.ext.radius.border.all.sm,
         color: context.ext.theme.convertByBrightness(
-          light: context.extApp.theme.currentThemeColor.white.color,
+          light: context.extApp.theme.currentThemeColor.black.onColor,
           dark: context.extApp.theme.currentThemeColor.black.color,
         ),
       ),
@@ -54,7 +54,7 @@ class MediumTattooCard extends StatelessWidget {
             style: context.ext.theme.textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.w500,
               color: context.ext.theme.convertByBrightness(
-                light: context.extApp.theme.currentThemeColor.white.onColor,
+                light: context.extApp.theme.currentThemeColor.black.onColor,
                 dark: context.extApp.theme.currentThemeColor.black.onColor,
               ),
             ),

@@ -88,6 +88,13 @@
                 }
             }
         },
+        "homeMainPage": {
+            "navbar": {
+                "home": "Home",
+                "appointments": "Appointments",
+                "profile": "Profile"
+            }
+        },
         "home": {
             "search": {
                 "placeholder": "Search for tattoos..."
@@ -98,6 +105,15 @@
             },
             "minimalistTattoos": {
                 "title": "Minimalist Tattoos"
+            }
+        },
+        "appointments": {
+            "selectAppointment": {
+                "title": "Select Appointment",
+                "selectDateField": {
+                    "hint": "Select Date"
+                },
+                "getButton": "Get"
             }
         },
         "widgets": {
