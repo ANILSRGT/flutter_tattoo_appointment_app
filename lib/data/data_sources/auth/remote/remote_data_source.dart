@@ -53,17 +53,17 @@ final class RemoteDataSource implements IRemoteDataSource {
   }
 
   @override
-  Future<ResponseModel<void>> signOut() {
-    // TODO: implement signOut
-    throw UnimplementedError();
-  }
-
-  @override
   Future<ResponseModel<AuthModel>> signUpWithEmailAndPassword({
     required String email,
     required String password,
   }) {
     // TODO: implement signUpWithEmailAndPassword
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<ResponseModel<void>> signOut() {
+    // TODO: implement signOut
     throw UnimplementedError();
   }
 }

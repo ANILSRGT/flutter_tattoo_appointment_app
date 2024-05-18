@@ -134,5 +134,15 @@
                 "viewButton": "View"
             }
         }
+    },
+    "errors": {
+        "auth": {
+            "signUpWithEmailPassword": {
+                "userNotFound": {
+                    "code": "AU|001",
+                    "message": "User not found"
+                }
+            }
+        }
     }
 }
