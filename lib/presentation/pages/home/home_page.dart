@@ -96,17 +96,17 @@ class _HomePageState extends State<HomePage> with HomePageMixin {
     return SearchBar(
       controller: _searchController,
       focusNode: _searchFocusNode,
-      hintStyle: MaterialStatePropertyAll(
+      hintStyle: WidgetStatePropertyAll(
         context.ext.theme.textTheme.bodyLarge?.copyWith(
           color: context.extApp.theme.currentThemeColor.black.onColor,
         ),
       ),
-      textStyle: MaterialStatePropertyAll(
+      textStyle: WidgetStatePropertyAll(
         context.ext.theme.textTheme.bodyLarge?.copyWith(
           color: context.extApp.theme.currentThemeColor.black.onColor,
         ),
       ),
-      backgroundColor: MaterialStatePropertyAll<Color>(
+      backgroundColor: WidgetStatePropertyAll<Color>(
         context.extApp.theme.currentThemeColor.black.color,
       ),
       hintText: LocalKeys.pagesHomeSearchPlaceholder.appExt.locale.toTr,

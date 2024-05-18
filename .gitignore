@@ -48,3 +48,13 @@ app.*.map.json
 # Firebase
 firebase.json
 lib/firebase_options.dart
+
+# Android
+android/key.properties
+android/app/google-services.json
+
+# iOS
+ios/Runner/GoogleService-Info.plist
+
+# macOS
+macos/Runner/GoogleService-Info.plist
