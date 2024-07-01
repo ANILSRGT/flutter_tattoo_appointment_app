@@ -8,9 +8,6 @@ mixin SplashPageMixin on State<SplashPage> {
   }
 
   Future<void> _initialize() async {
-    // TODO: Implement splash screen logic and remove the delay
-    await Future.delayed(const Duration(seconds: 2), () {});
-
     // Check if the app is opened for the first time
     final firstTime = Injection.read<CacheManager>().get(
       CacheKeys.isFirstTime,

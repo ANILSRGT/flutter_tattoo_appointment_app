@@ -6,6 +6,9 @@ enum CacheKeys<T> {
   ),
   isThemMode<ThemeMode>(
     keyName: 'isThemeMode',
+  ),
+  userToken<String>(
+    keyName: 'userToken',
   );
 
   const CacheKeys({

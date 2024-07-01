@@ -6,12 +6,12 @@ sealed class ResponseModel<T> {
   /// Response model constructor
   const ResponseModel();
 
-  /// Returns true if the response is success
-  /// otherwise false
+  /// Returns `true` if the response is `success`
+  /// <br>otherwise `false`
   bool get isSuccess => this is ResponseModelSuccess<T>;
 
-  /// Returns true if the response is fail
-  /// otherwise false
+  /// Returns `true` if the response is `fail`
+  /// <br>otherwise `false`
   bool get isFail => this is ResponseModelFail<T>;
 
   /// cast to [ResponseModelSuccess]
@@ -39,6 +39,7 @@ class ResponseModelFail<T> extends ResponseModel<T> {
     required this.message,
     required this.throwMessage,
     required this.code,
+    this.data,
   });
 
   /// Error code
@@ -49,6 +50,9 @@ class ResponseModelFail<T> extends ResponseModel<T> {
 
   /// Message for fail response
   final String message;
+
+  /// Data for fail response
+  final T? data;
 }
 
 /// Extension for [ResponseModelFail]
@@ -59,6 +63,7 @@ extension ResponseModelFailExtension<T> on ResponseModelFail<T> {
         code: code,
         message: message,
         throwMessage: throwMessage,
+        data: data as X?,
       );
 }
 

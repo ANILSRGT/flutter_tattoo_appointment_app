@@ -14,7 +14,7 @@ dependencies:
   easy_sticky_header: ^1.1.1
 
   # State Management
-  flutter_bloc: ^8.1.5
+  flutter_bloc: ^8.1.6
   get_it: ^7.7.0
 
   # Localizations

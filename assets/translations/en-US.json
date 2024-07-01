@@ -137,10 +137,82 @@
     },
     "errors": {
         "auth": {
+            "signInWithEmailPassword": {
+                "userNotFound": {
+                    "code": "AU|1|001",
+                    "message": "User not found"
+                },
+                "tokenNotFound": {
+                    "code": "AU|1|002",
+                    "message": "Token not found"
+                },
+                "firebase": {
+                    "invalidEmail": {
+                        "code": "AU|1|F|01",
+                        "message": "Email or password is wrong"
+                    },
+                    "userDisabled": {
+                        "code": "AU|1|F|02",
+                        "message": "User disabled"
+                    },
+                    "userNotFound": {
+                        "code": "AU|1|F|03",
+                        "message": "Email or password is wrong"
+                    },
+                    "wrongPassword": {
+                        "code": "AU|1|F|04",
+                        "message": "Email or password is wrong"
+                    },
+                    "unknown": {
+                        "code": "AU|1|F|UNK",
+                        "message": "Something went wrong."
+                    }
+                },
+                "unknown": {
+                    "code": "AU|1|UNK",
+                    "message": "Something went wrong."
+                }
+            },
             "signUpWithEmailPassword": {
                 "userNotFound": {
-                    "code": "AU|001",
+                    "code": "AU|2|001",
                     "message": "User not found"
+                },
+                "tokenNotFound": {
+                    "code": "AU|2|002",
+                    "message": "Token not found"
+                },
+                "firebase": {
+                    "emailAlreadyInUse": {
+                        "code": "AU|2|F|01",
+                        "message": "Email already in use"
+                    },
+                    "invalidEmail": {
+                        "code": "AU|2|F|02",
+                        "message": "Invalid email"
+                    },
+                    "operationNotAllowed": {
+                        "code": "AU|2|F|03",
+                        "message": "Operation not allowed"
+                    },
+                    "weakPassword": {
+                        "code": "AU|2|F|04",
+                        "message": "Weak password"
+                    },
+                    "unknown": {
+                        "code": "AU|2|F|UNK",
+                        "message": "Something went wrong."
+                    }
+                },
+                "unknown": {
+                    "code": "AU|2|UNK",
+                    "message": "Something went wrong."
+                }
+            },
+            "signOut": {
+                "unknown": {
+                    "code": "AU|3|UNK",
+                    "message": "Something went wrong."
                 }
             }
         }

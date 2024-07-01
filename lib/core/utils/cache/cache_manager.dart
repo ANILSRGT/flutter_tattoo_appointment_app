@@ -3,28 +3,32 @@ import 'package:tattoo_appointment/core/utils/cache/icache.dart';
 
 final class CacheManager {
   const CacheManager({
-    required this.cache,
-  });
+    required ICache cache,
+  }) : _cache = cache;
 
-  final ICache cache;
+  final ICache _cache;
 
   Future<void> init() async {
-    await cache.init();
+    await _cache.init();
   }
 
   void clear() {
-    cache.clear();
+    _cache.clear();
   }
 
   Future<void> delete<T>(CacheKeys<T> key) {
-    return cache.delete(key);
+    return _cache.delete(key);
   }
 
   T? get<T>(CacheKeys<T> key, {T? defaultValue}) {
-    return cache.get(key, defaultValue: defaultValue);
+    return _cache.get(key, defaultValue: defaultValue);
   }
 
   Future<void> set<T>(CacheKeys<T> key, T value) {
-    return cache.set(key, value);
+    return _cache.set(key, value);
+  }
+
+  Stream<T?> listen<T>(CacheKeys<T> key) {
+    return _cache.listen(key);
   }
 }

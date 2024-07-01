@@ -35,4 +35,41 @@ mixin AuthPageMixin on State<AuthPage> {
   }
 
   void get _toggleSignUpState => _authPageCubit.toggleSignUp();
+
+  void onSubmit() {
+    _authPageCubit.changePageState(isBusy: true);
+
+    var isValid = _emailController.value.selection.isValid;
+    isValid = isValid && _passwordController.value.selection.isValid;
+
+    if (!isValid) {
+      _authPageCubit.changePageState(isBusy: false);
+      return;
+    }
+
+    if (_authPageCubit.state.isSignUp) {
+      isValid = isValid && _firstNameController.value.selection.isValid;
+      isValid = isValid && _lastNameController.value.selection.isValid;
+      isValid = isValid && _confirmPasswordController.value.selection.isValid;
+
+      if (!isValid) {
+        _authPageCubit.changePageState(isBusy: false);
+        return;
+      }
+
+      _authPageCubit.signUp(
+        firstName: _firstNameController.text,
+        lastName: _lastNameController.text,
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
+    } else {
+      _authPageCubit.signIn(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
+    }
+
+    _authPageCubit.changePageState(isBusy: false);
+  }
 }

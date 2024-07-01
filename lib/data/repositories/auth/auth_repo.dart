@@ -1,24 +1,28 @@
 import 'package:core/core.dart';
-import 'package:tattoo_appointment/data/data_sources/auth/local/ilocal_data_source.dart';
-import 'package:tattoo_appointment/data/data_sources/auth/remote/iremote_data_source.dart';
-import 'package:tattoo_appointment/domain/entities/auth_entity.dart';
+import 'package:tattoo_appointment/data/data_sources/auth/local/iauth_local_data_source.dart';
+import 'package:tattoo_appointment/data/data_sources/auth/remote/iauth_remote_data_source.dart';
+import 'package:tattoo_appointment/data/models/auth_model.dart';
 import 'package:tattoo_appointment/domain/repositories/auth/iauth_repo.dart';
 
 final class AuthRepo implements IAuthRepo {
   AuthRepo({
-    required IRemoteDataSource remoteDataSource,
-    required ILocalDataSource localDataSource,
+    required IAuthRemoteDataSource remoteDataSource,
+    required IAuthLocalDataSource localDataSource,
   })  : _remoteDataSource = remoteDataSource,
         _localDataSource = localDataSource;
 
-  final IRemoteDataSource _remoteDataSource;
-  final ILocalDataSource _localDataSource;
+  final IAuthRemoteDataSource _remoteDataSource;
+  // ignore: unused_field
+  final IAuthLocalDataSource _localDataSource;
 
   @override
-  Future<String?> getUserToken() => _localDataSource.getUserToken();
+  Stream<AuthModel?> get userChanges => _remoteDataSource.userChanges;
 
   @override
-  Future<ResponseModel<AuthEntity>> signInWithEmailAndPassword({
+  Future<AuthModel?> get currentUser => _remoteDataSource.currentUser;
+
+  @override
+  Future<ResponseModel<AuthModel>> signInWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
@@ -29,17 +33,11 @@ final class AuthRepo implements IAuthRepo {
 
     if (resRemote.isFail) return resRemote;
 
-    final resLocal = await _localDataSource.cacheUserToken(
-      resRemote.asSuccess.data.token,
-    );
-
-    if (resLocal.isFail) return resLocal.asFail.convertTo<AuthEntity>();
-
     return resRemote;
   }
 
   @override
-  Future<ResponseModel<AuthEntity>> signUpWithEmailAndPassword({
+  Future<ResponseModel<AuthModel>> signUpWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
@@ -50,12 +48,6 @@ final class AuthRepo implements IAuthRepo {
 
     if (resRemote.isFail) return resRemote;
 
-    final resLocal = await _localDataSource.cacheUserToken(
-      resRemote.asSuccess.data.token,
-    );
-
-    if (resLocal.isFail) return resLocal.asFail.convertTo<AuthEntity>();
-
     return resRemote;
   }
 
@@ -64,10 +56,6 @@ final class AuthRepo implements IAuthRepo {
     final resRemote = await _remoteDataSource.signOut();
 
     if (resRemote.isFail) return resRemote;
-
-    final resLocal = await _localDataSource.clearUserToken();
-
-    if (resLocal.isFail) return resLocal.asFail;
 
     return resRemote;
   }

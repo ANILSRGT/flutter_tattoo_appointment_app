@@ -5,8 +5,4 @@ final class HomePageState with EquatableMixin {
 
   @override
   List<Object?> get props => [];
-
-  HomePageState copyWith() {
-    return const HomePageState();
-  }
 }

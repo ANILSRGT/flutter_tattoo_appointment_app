@@ -6,7 +6,9 @@ final class AuthSignInWithEmailPasswordUseCase
     implements
         IUseCaseWithParams<AuthEntity,
             AuthSignInWithEmailPasswordUseCaseParams> {
-  AuthSignInWithEmailPasswordUseCase(IAuthRepo authRepo) : _authRepo = authRepo;
+  AuthSignInWithEmailPasswordUseCase({
+    required IAuthRepo authRepo,
+  }) : _authRepo = authRepo;
 
   final IAuthRepo _authRepo;
 

@@ -36,4 +36,9 @@ final class HiveCache implements ICache {
   Future<void> set<T>(CacheKeys<T> key, T value) {
     return box.put(key.keyName, value);
   }
+
+  @override
+  Stream<T?> listen<T>(CacheKeys<T> key) {
+    return box.watch(key: key.keyName).map((event) => event.value as T?);
+  }
 }

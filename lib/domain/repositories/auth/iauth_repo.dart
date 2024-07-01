@@ -2,7 +2,9 @@ import 'package:core/core.dart';
 import 'package:tattoo_appointment/domain/entities/auth_entity.dart';
 
 abstract interface class IAuthRepo {
-  Future<String?> getUserToken();
+  Stream<AuthEntity?> get userChanges;
+
+  Future<AuthEntity?> get currentUser;
 
   Future<ResponseModel<AuthEntity>> signInWithEmailAndPassword({
     required String email,

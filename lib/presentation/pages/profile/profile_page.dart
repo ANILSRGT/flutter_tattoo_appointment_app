@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tattoo_appointment/core/constants/localization/local_keys.g.dart';
 import 'package:tattoo_appointment/core/extensions/context/context_ext.dart';
 import 'package:tattoo_appointment/core/extensions/string/string_ext.dart';
+import 'package:tattoo_appointment/presentation/pages/profile/cubit/profile_page_cubit.dart';
 import 'package:tattoo_appointment/presentation/pages/profile/widgets/profile_editable_info.dart';
 import 'package:tattoo_appointment/presentation/widgets/avatar/profile_avatar.dart';
 import 'package:tattoo_appointment/presentation/widgets/cover/profile_cover.dart';
@@ -257,7 +258,7 @@ class _ProfilePageState extends State<ProfilePage> with ProfilePageMixin {
       backgroundColor: context.extApp.theme.currentThemeColor.error.color,
       contentColor: context.extApp.theme.currentThemeColor.error.onColor,
       iconColor: context.extApp.theme.currentThemeColor.error.onColor,
-      onTap: () {},
+      onTap: _onLogout,
     );
   }
 }
